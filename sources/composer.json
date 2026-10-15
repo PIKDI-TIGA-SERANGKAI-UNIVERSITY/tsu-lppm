@@ -1,0 +1,104 @@
+{
+    "name": "laravel/laravel",
+    "type": "project",
+    "description": "The Laravel Framework.",
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^8.3",
+        "guzzlehttp/guzzle": "^7.8",
+        "laravel/framework": "^13.0",
+        "laravel/reverb": "^1.12",
+        "laravel/tinker": "^3.0",
+        "maatwebsite/excel": "^3.1.70",
+        "nwidart/laravel-modules": "^13.0",
+        "pikdi/tsu-core": "dev-main",
+        "pikdi/tsu-foundation": "dev-main",
+        "spatie/laravel-ignition": "^2.12",
+        "spatie/laravel-permission": "^6.25",
+        "yajra/laravel-datatables-oracle": "^13.0"
+    },
+    "require-dev": {
+        "fakerphp/faker": "^1.23",
+        "mockery/mockery": "^1.6",
+        "nunomaduro/collision": "^8.9",
+        "phpunit/phpunit": "^12.0"
+    },
+    "suggest": {
+        "pikdi/tsu-karyawan": "Data dosen & tendik dari HRIS TSU (opsional): composer require pikdi/tsu-karyawan:dev-main"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/PIKDI-TIGA-SERANGKAI-UNIVERSITY/tsu-core.git",
+            "no-api": true
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/PIKDI-TIGA-SERANGKAI-UNIVERSITY/tsu-foundation.git",
+            "no-api": true
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/PIKDI-TIGA-SERANGKAI-UNIVERSITY/tsu-karyawan.git",
+            "no-api": true
+        }
+    ],
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "wikimedia/composer-merge-plugin": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        },
+        "merge-plugin": {
+            "include": [
+                "Modules/*/composer.json",
+                "composer.local.json"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Modules\\": "Modules/"
+        },
+        "classmap": [
+            "database/seeders",
+            "database/factories"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate --ansi"
+        ],
+        "post-install-cmd": [
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
+        ],
+        "post-update-cmd": [
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
+        ]
+    }
+}

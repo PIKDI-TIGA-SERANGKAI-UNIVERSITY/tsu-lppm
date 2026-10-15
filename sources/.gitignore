@@ -1,0 +1,81 @@
+# --- LARAVEL CORE ---
+/vendor
+/node_modules
+/public/hot
+/public/storage
+/storage/*.key
+.env
+.env.*
+!.env.example
+.phpunit.result.cache
+.phpunit.cache/
+.php-cs-fixer.cache
+/bootstrap/cache/*.php
+!/bootstrap/cache/.gitignore
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+/auth.json
+
+# --- PAKET TSU (COMPOSER) ---
+# composer.lock sengaja TIDAK diabaikan: pada proyek turunan, lock di-commit agar seluruh tim dan server memakai
+# versi paket yang sama. Template sendiri tidak menyertakan lock. Saat mengembangkan template (bukan proyek),
+# abaikan lock lokal lewat .git/info/exclude agar tidak ikut ter-commit.
+# Override lokal pengembang paket PIKDI (path ke folder paket), lihat composer.local.json.example
+/composer.local.json
+
+# --- SECURITY & SSO (PENTING!) ---
+storage/oauth-*.key
+storage/*.key
+*.key
+*.pem
+*.crt
+
+# --- LOGS & CACHE ---
+/storage/logs/*.log
+/storage/framework/cache/data/*
+/storage/framework/sessions/*
+/storage/framework/testing/*
+/storage/framework/views/*
+
+# Kecuali file .gitignore di dalam folder tersebut (biar foldernya ke-track)
+!/storage/framework/cache/data/.gitignore
+!/storage/framework/sessions/.gitignore
+!/storage/framework/testing/.gitignore
+!/storage/framework/views/.gitignore
+
+# --- SCRATCH & TEMPORARY SCRIPTS ---
+/scratch
+scratch/
+*.tmp
+*.temp
+*.bak
+
+# --- EDITOR & OS TRASH ---
+.idea
+.vscode
+.fleet
+*.iml
+.DS_Store
+Thumbs.db
+Desktop.ini
+ehthumbs.db
+
+# --- MISC & BACKUP ---
+# Kalau ada file backup database (sql/zip) jangan sampe masuk
+*.sql
+*.sqlite
+*.sqlite-journal
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# --- LARAVEL MODULES (MODULAR MONOLITH) ---
+# Ignore dependencies or builds that might be generated per-module
+Modules/*/node_modules/
+Modules/*/vendor/
+Modules/*/public/build/
+Modules/*/public/hot
+Modules/*/.env

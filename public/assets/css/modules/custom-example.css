@@ -1,0 +1,48 @@
+/**
+ * =========================================================================
+ * TSU Module Custom Stylesheet Example
+ * =========================================================================
+ * Letakkan stylesheet khusus untuk modul Anda di dalam direktori ini:
+ * public/assets/css/modules/nama-modul.css
+ * 
+ * ATURAN BAKU PENGEMBANGAN:
+ * 1. JANGAN PERNAH mengedit file induk "public/vendor/tsu-core/tsu/css/tsu-theme.css"!
+ * 2. Selalu gunakan CSS Variables resmi TSU agar warna konsisten:
+ *    - var(--tsu-primary, #094b54)        : Warna Dark Teal Utama
+ *    - var(--tsu-primary-light, #1d7a87)  : Warna Teal Muda (Aksen & Border)
+ *    - var(--tsu-gold, #f8c12a)           : Warna Emas Institusi
+ *    - var(--tsu-dark-bg, #0b1120)        : Latar Gelap Utama
+ *    - var(--tsu-card-dark, #131d31)      : Latar Kartu Mode Gelap
+ * 3. WAJIB selalu menyediakan aturan Dark Mode menggunakan selektor:
+ *    body.dark-mode .nama-class-anda { ... }
+ * 4. JANGAN PERNAH menulis `color: #000;` atau `color: black;` secara hardcode
+ *    tanpa penyeimbang di mode malam!
+ * =========================================================================
+ */
+
+/* Contoh Deklarasi Elemen Khusus Modul */
+.tsu-module-box {
+    background: #ffffff;
+    color: #1e293b;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.25s ease;
+}
+
+.tsu-module-box:hover {
+    border-color: var(--tsu-primary-light, #1d7a87);
+    box-shadow: 0 4px 14px rgba(9, 75, 84, 0.08);
+}
+
+/* WAJIB: Dukungan Mode Gelap (Dark Mode) */
+body.dark-mode .tsu-module-box {
+    background: #131d31 !important;
+    color: #f1f5f9 !important;
+    border-color: #1e293b !important;
+}
+
+body.dark-mode .tsu-module-box:hover {
+    border-color: var(--tsu-gold, #f8c12a) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+}

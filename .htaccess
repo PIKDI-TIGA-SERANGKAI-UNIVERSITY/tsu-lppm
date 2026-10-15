@@ -1,0 +1,33 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+
+    # [SECURITY] Blokir semua dotfile/dotfolder (.git, .env, .idea, .DS_Store), kecuali .well-known
+    RewriteRule (^|/)\.(?!well-known/) - [F,L]
+
+    # [SECURITY] Hanya index.php & file di dalam public/ yang boleh diakses langsung dari web.
+    # sources/, docs/, scratch/, README.md, dll. ditolak (403) karena document root = root repo.
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^(?!public/|index\.php$). - [F,L]
+
+    # [SECURITY] public/ hanya untuk aset statis & upload: larang eksekusi skrip PHP di dalamnya
+    RewriteRule ^public/.*\.(php\d?|phtml|phar)$ - [F,L,NC]
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Send Requests To Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>

@@ -1,0 +1,26 @@
+{
+    "_catatan": "Salin menjadi composer.local.json (tidak di-commit) bila Anda mengembangkan paket TSU di laptop: paket diambil dari folder lokal (symlink), bukan dari GitHub. Jalankan lalu: composer update \"pikdi/*\"",
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../../tsu-core",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "../../tsu-foundation",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "../../tsu-karyawan",
+            "options": {
+                "symlink": true
+            }
+        }
+    ]
+}
