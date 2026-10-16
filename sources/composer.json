@@ -17,6 +17,7 @@
         "nwidart/laravel-modules": "^13.0",
         "pikdi/tsu-core": "dev-main",
         "pikdi/tsu-foundation": "dev-main",
+        "pikdi/tsu-karyawan": "dev-main",
         "spatie/laravel-ignition": "^2.12",
         "spatie/laravel-permission": "^6.25",
         "yajra/laravel-datatables-oracle": "^13.0"

@@ -1,0 +1,7 @@
+# Reviewer wajib untuk setiap Pull Request, didaftarkan otomatis lewat Ruleset
+# ("Require a pull request before merging" > "Require review from Code Owners").
+#
+# Diwarisi otomatis oleh setiap repo proyek turunan yang dibuat lewat "Use this template".
+#
+# Team "PIKDI" (slug: pikdi) di organisasi PIKDI-TIGA-SERANGKAI-UNIVERSITY.
+* @PIKDI-TIGA-SERANGKAI-UNIVERSITY/pikdi
