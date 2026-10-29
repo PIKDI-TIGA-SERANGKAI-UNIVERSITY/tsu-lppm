@@ -3641,12 +3641,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PIKDI-TIGA-SERANGKAI-UNIVERSITY/tsu-foundation.git",
-                "reference": "e4d594da8131d78c5b209496c376c35d8e2dbc24"
+                "reference": "275c1fcfffbf8daaaac18c072106b4114cb49957"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PIKDI-TIGA-SERANGKAI-UNIVERSITY/tsu-foundation/zipball/e4d594da8131d78c5b209496c376c35d8e2dbc24",
-                "reference": "e4d594da8131d78c5b209496c376c35d8e2dbc24",
+                "url": "https://api.github.com/repos/PIKDI-TIGA-SERANGKAI-UNIVERSITY/tsu-foundation/zipball/275c1fcfffbf8daaaac18c072106b4114cb49957",
+                "reference": "275c1fcfffbf8daaaac18c072106b4114cb49957",
                 "shasum": ""
             },
             "require": {
@@ -3714,7 +3714,7 @@
                 "pikdi",
                 "tsu"
             ],
-            "time": "2026-10-22T05:15:12+00:00"
+            "time": "2026-10-28T09:24:33+00:00"
         },
         {
             "name": "pikdi/tsu-karyawan",
