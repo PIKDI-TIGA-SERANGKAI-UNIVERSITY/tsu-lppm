@@ -3567,12 +3567,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PIKDI-TIGA-SERANGKAI-UNIVERSITY/tsu-core.git",
-                "reference": "3be3905535f9c6165d2530c9379931e64b1a7716"
+                "reference": "e49a9a7e65009b1a69bd352c638251a765b2697f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PIKDI-TIGA-SERANGKAI-UNIVERSITY/tsu-core/zipball/3be3905535f9c6165d2530c9379931e64b1a7716",
-                "reference": "3be3905535f9c6165d2530c9379931e64b1a7716",
+                "url": "https://api.github.com/repos/PIKDI-TIGA-SERANGKAI-UNIVERSITY/tsu-core/zipball/e49a9a7e65009b1a69bd352c638251a765b2697f",
+                "reference": "e49a9a7e65009b1a69bd352c638251a765b2697f",
                 "shasum": ""
             },
             "require": {
@@ -3633,7 +3633,7 @@
                 "tsu",
                 "ui-kit"
             ],
-            "time": "2026-10-16T04:34:26+00:00"
+            "time": "2026-11-04T09:57:43+00:00"
         },
         {
             "name": "pikdi/tsu-foundation",
@@ -3641,12 +3641,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PIKDI-TIGA-SERANGKAI-UNIVERSITY/tsu-foundation.git",
-                "reference": "275c1fcfffbf8daaaac18c072106b4114cb49957"
+                "reference": "664c64135cbf486a54001ccafbeefe5ab1ae0668"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PIKDI-TIGA-SERANGKAI-UNIVERSITY/tsu-foundation/zipball/275c1fcfffbf8daaaac18c072106b4114cb49957",
-                "reference": "275c1fcfffbf8daaaac18c072106b4114cb49957",
+                "url": "https://api.github.com/repos/PIKDI-TIGA-SERANGKAI-UNIVERSITY/tsu-foundation/zipball/664c64135cbf486a54001ccafbeefe5ab1ae0668",
+                "reference": "664c64135cbf486a54001ccafbeefe5ab1ae0668",
                 "shasum": ""
             },
             "require": {
@@ -3714,7 +3714,7 @@
                 "pikdi",
                 "tsu"
             ],
-            "time": "2026-10-28T09:24:33+00:00"
+            "time": "2026-11-04T10:40:21+00:00"
         },
         {
             "name": "pikdi/tsu-karyawan",
