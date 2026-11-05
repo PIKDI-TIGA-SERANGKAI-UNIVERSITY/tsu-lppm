@@ -18,7 +18,7 @@ class AuthServiceProvider extends ServiceProvider
     /**
      * Register any authentication / authorization services.
      *
-     * Bypass akses penuh untuk role pikdi, super admin, dan super admin {modul}
+     * Bypass akses penuh untuk role pikdi dan super admin {modul}
      * (Gate::before) sudah didaftarkan oleh pikdi/tsu-foundation.
      *
      * @return void

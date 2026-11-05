@@ -5,7 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 
 /**
- * Gate::before super admin (pikdi, super admin, super admin {modul}) didaftarkan oleh pikdi/tsu-foundation,
+ * Gate::before super admin (pikdi, super admin {modul}) didaftarkan oleh pikdi/tsu-foundation,
  * Blade directive (@rupiah, @tglIndo, @hari, @bulanRomawi) oleh pikdi/tsu-core.
  * Daftarkan service khusus aplikasi di sini.
  */
