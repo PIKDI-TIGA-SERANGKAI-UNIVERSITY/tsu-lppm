@@ -522,7 +522,7 @@
                                 <div class="tsu-step-num">4</div>
                                 <div>
                                     <b class="text-dark d-block fw-semibold">Daftarkan Menu Navigasi di Sidebar</b>
-                                    <small class="text-muted">Buka <b>System Management &gt; Menus Management</b> (butuh role super admin) untuk menambah entri route &amp; ikon, dan daftarkan juga di <code>MenuSeeder</code> agar ikut terpasang di server.</small>
+                                    <small class="text-muted">Buka <b>System Management &gt; Menus Management</b> (butuh role pikdi atau super admin modul) untuk menambah entri route &amp; ikon, dan daftarkan juga di <code>MenuSeeder</code> agar ikut terpasang di server.</small>
                                 </div>
                             </div>
                             <div class="tsu-step-item">
