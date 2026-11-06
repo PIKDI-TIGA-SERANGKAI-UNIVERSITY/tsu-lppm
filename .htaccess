@@ -10,12 +10,13 @@
 
     # [SECURITY] Hanya index.php & file di dalam public/ yang boleh diakses langsung dari web.
     # sources/, docs/, scratch/, README.md, dll. ditolak (403) karena document root = root repo.
+    # .well-known/ tetap dibuka untuk verifikasi penerbitan SSL.
     RewriteCond %{REQUEST_FILENAME} -f [OR]
     RewriteCond %{REQUEST_FILENAME} -d
-    RewriteRule ^(?!public/|index\.php$). - [F,L]
+    RewriteRule ^(?!public/|index\.php$|\.well-known/). - [F,L]
 
-    # [SECURITY] public/ hanya untuk aset statis & upload: larang eksekusi skrip PHP di dalamnya
-    RewriteRule ^public/.*\.(php\d?|phtml|phar)$ - [F,L,NC]
+    # [SECURITY] public/ dan .well-known/ bukan tempat skrip: larang eksekusi PHP di dalamnya
+    RewriteRule ^(public|\.well-known)/.*\.(php\d?|phtml|phar)$ - [F,L,NC]
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .

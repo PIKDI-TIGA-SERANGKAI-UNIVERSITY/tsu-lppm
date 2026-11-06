@@ -9,8 +9,8 @@
  *
  *   1. Dotfile/dotfolder (.env, .git, ...) kecuali .well-known  -> 403
  *   2. Folder (selain /)                                       -> 403 (tanpa daftar isi folder)
- *   3. Skrip PHP di dalam public/                              -> 403 (public/ hanya untuk aset)
- *   4. Berkas di dalam public/                                 -> dilayani apa adanya
+ *   3. Skrip PHP di dalam public/ atau .well-known/            -> 403 (bukan tempat skrip)
+ *   4. Berkas di dalam public/ atau .well-known/               -> dilayani apa adanya
  *   5. Berkas lain (sources/, README.md, composer.json, ...)   -> 403, kecuali /index.php
  *   6. Selain itu                                              -> diteruskan ke index.php (Laravel)
  *
@@ -46,15 +46,15 @@ if ($uri !== '/' && $uri !== '') {
             return true;
         }
 
-        // 3. Skrip PHP di public/
-        if (preg_match('~^/public/.*\.(php\d?|phtml|phar)$~i', $uri)) {
+        // 3. Skrip PHP di public/ atau .well-known/
+        if (preg_match('~^/(public|\.well-known)/.*\.(php\d?|phtml|phar)$~i', $uri)) {
             $deny();
 
             return true;
         }
 
-        // 4. Aset statis di public/
-        if (str_starts_with($uri, '/public/')) {
+        // 4. Aset statis di public/ dan berkas verifikasi di .well-known/
+        if (str_starts_with($uri, '/public/') || str_starts_with($uri, '/.well-known/')) {
             return false;
         }
 
