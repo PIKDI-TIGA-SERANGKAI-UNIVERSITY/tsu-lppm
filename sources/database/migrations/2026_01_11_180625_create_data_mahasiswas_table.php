@@ -51,10 +51,7 @@ return new class extends Migration
             $table->string('email_pribadi')->nullable();
 
             // --- DATA WILAYAH (Domisili) ---
-            $idProvinsi = $table->char('id_provinsi', 2)->nullable();
-            if (Schema::getConnection()->getDriverName() === 'mysql') {
-                $idProvinsi->collation('utf8mb4_0900_ai_ci'); // collation khusus MySQL 8
-            }
+            $table->char('id_provinsi', 2)->nullable();
             $table->unsignedBigInteger('id_kabupaten')->nullable();
 
             // Tambahan Wilayah Spesifik Feeder

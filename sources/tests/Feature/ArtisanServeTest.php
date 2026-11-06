@@ -63,6 +63,25 @@ class ArtisanServeTest extends TestCase
             @unlink($probe);
         }
 
+        // Berkas verifikasi SSL di .well-known/ dilayani, tetapi skripnya tidak dieksekusi
+        $wellKnown = ServeCommand::documentRoot() . '/.well-known';
+        $sudahAda = is_dir($wellKnown);
+        if (! $sudahAda) {
+            mkdir($wellKnown);
+        }
+        file_put_contents($wellKnown . '/zz-uji.txt', 'verifikasi');
+        file_put_contents($wellKnown . '/zz-uji.php', '<?php echo "dieksekusi";');
+        try {
+            $this->assertSame(200, $this->httpStatus('/.well-known/zz-uji.txt'));
+            $this->assertSame(403, $this->httpStatus('/.well-known/zz-uji.php'));
+        } finally {
+            @unlink($wellKnown . '/zz-uji.txt');
+            @unlink($wellKnown . '/zz-uji.php');
+            if (! $sudahAda) {
+                @rmdir($wellKnown);
+            }
+        }
+
         // Selain itu diteruskan ke Laravel (bukan ditolak router)
         $this->assertNotSame(403, $this->httpStatus('/rute-yang-tidak-ada-sama-sekali'));
         $this->assertNotSame(403, $this->httpStatus('/index.php'));
@@ -74,8 +93,8 @@ class ArtisanServeTest extends TestCase
 
         // Bila salah satu aturan ini berubah, sesuaikan sources/server.php lalu perbarui tes ini
         $this->assertStringContainsString('RewriteRule (^|/)\.(?!well-known/) - [F,L]', $htaccess);
-        $this->assertStringContainsString('RewriteRule ^(?!public/|index\.php$). - [F,L]', $htaccess);
-        $this->assertStringContainsString('RewriteRule ^public/.*\.(php\d?|phtml|phar)$ - [F,L,NC]', $htaccess);
+        $this->assertStringContainsString('RewriteRule ^(?!public/|index\.php$|\.well-known/). - [F,L]', $htaccess);
+        $this->assertStringContainsString('RewriteRule ^(public|\.well-known)/.*\.(php\d?|phtml|phar)$ - [F,L,NC]', $htaccess);
     }
 
     public function test_serve_command_moves_the_working_directory_to_the_repository_root(): void
