@@ -107,7 +107,7 @@ class KaryawanIntegrationTest extends TestCase
     {
         $this->migrateKaryawanTable();
         $this->enableKaryawan();
-        config(['app.features.demo_dashboard' => true]);
+        config(['tsu-core.features.demo_dashboard' => true]);
 
         $this->actingAs($this->makeUser('pikdi'))
             ->get(route('admin.dashboard'))
