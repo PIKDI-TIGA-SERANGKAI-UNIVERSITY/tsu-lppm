@@ -3722,12 +3722,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PIKDI-TIGA-SERANGKAI-UNIVERSITY/tsu-karyawan.git",
-                "reference": "a45941d2719a6036b57a44199e90b8ca31ea12f5"
+                "reference": "b472a58fbae08979bf6e5250b479958703cdc24d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PIKDI-TIGA-SERANGKAI-UNIVERSITY/tsu-karyawan/zipball/a45941d2719a6036b57a44199e90b8ca31ea12f5",
-                "reference": "a45941d2719a6036b57a44199e90b8ca31ea12f5",
+                "url": "https://api.github.com/repos/PIKDI-TIGA-SERANGKAI-UNIVERSITY/tsu-karyawan/zipball/b472a58fbae08979bf6e5250b479958703cdc24d",
+                "reference": "b472a58fbae08979bf6e5250b479958703cdc24d",
                 "shasum": ""
             },
             "require": {
@@ -3797,7 +3797,7 @@
                 "pikdi",
                 "tsu"
             ],
-            "time": "2026-11-05T09:48:02+00:00"
+            "time": "2026-11-19T04:54:17+00:00"
         },
         {
             "name": "psr/clock",
